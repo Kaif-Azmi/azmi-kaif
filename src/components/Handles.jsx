@@ -9,19 +9,19 @@ const Handles = () => {
       name: "LeetCode",
       username: "Kaif_Azmi",
       url: "https://leetcode.com/u/Kaif_Azmi",
-      icon: "/images/leetcode.svg",
+      icon: "./images/leetcode.svg",
     },
     {
       name: "CodeChef",
       username: "Kaifazmi0",
       url: "https://www.codechef.com/users/Kaifazmi0",
-      icon: "/images/codechef.svg",
+      icon: "./images/codechef.svg",
     },
     {
       name: "GitHub",
       username: "Kaif-Azmi",
       url: "https://github.com/Kaif-Azmi",
-      icon: "/images/github.svg",
+      icon: "./images/github.svg",
     },
   ];
 
@@ -30,25 +30,25 @@ const Handles = () => {
       name: "LinkedIn",
       username: "kaifazmi",
       url: "https://www.linkedin.com/in/kaifazmi",
-      icon: "/images/linkedin.svg",
+      icon: "./images/linkedin.svg",
     },
     {
       name: "Twitter / X",
       username: "kaif_azmi0",
       url: "https://x.com/kaif_azmi0",
-      icon: "/images/x.svg",
+      icon: "./images/x.svg",
     },
     {
       name: "Discord",
       username: "kaifazmi0",
       url: "https://discord.com/users/1304459419249152082",
-      icon: "/images/discord.svg",
+      icon: "./images/discord.svg",
     },
     {
       name: "Telegram",
       username: "Kaif_azmi0",
       url: "https://t.me/Kaif_azmi0",
-      icon: "/images/telegram.svg",
+      icon: "./images/telegram.svg",
     },
   ];
 

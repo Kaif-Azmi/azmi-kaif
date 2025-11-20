@@ -11,7 +11,7 @@ const HeroBanner = () => {
           <div className="space-y-6 sm:space-y-8">
             <div className="flex items-center gap-3">
               <img
-                src="/images/avatar_1.jpg"
+                src="./images/avatar_1.jpg"
                 alt="Kaif"
                 className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover"
               />
@@ -51,7 +51,7 @@ const HeroBanner = () => {
           <div className="relative lg:order-last flex justify-center lg:justify-end">
             <div className="relative rounded-2xl overflow-hidden w-[68%]">
               <img
-                src="/images/avatar_1.jpg"
+                src="./images/avatar_1.jpg"
                 alt="Kaif - Web Developer"
                 className="w-full h-auto object-cover rounded-2xl"
               />

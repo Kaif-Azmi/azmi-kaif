@@ -8,49 +8,49 @@ const EssentialTools = () => {
     {
       name: "Figma",
       category: "Design tool",
-      icon: "/images/figma.svg",
+      icon: "./images/figma.svg",
       
     },
     {
       name: "CSS",
       category: "User Interface",
-      icon: "/images/css3.svg",
+      icon: "./images/css3.svg",
       
     },
     {
       name: "JavaScript",
       category: "Interaction",
-      icon: "/images/javascript.svg",
+      icon: "./images/javascript.svg",
       
     },
     {
       name: "React",
       category: "Framework",
-      icon: "/images/react.svg",
+      icon: "./images/react.svg",
       
     },
     {
       name: "TailwindCSS",
       category: "User Interface",
-      icon: "/images/tailwindcss.svg",
+      icon: "./images/tailwindcss.svg",
       
     },
     {
       name: "Node.JS",
       category: "Web Server",
-      icon: "/images/nodejs.svg",
+      icon: "./images/nodejs.svg",
       
     },
     {
       name: "Express.JS",
       category: "Node Framework",
-      icon: "/images/expressjs.svg",
+      icon: "./images/expressjs.svg",
       
     },
     {
       name: "C++",
       category: "Problem Solving",
-      icon: "/images/cpp.svg",
+      icon: "./images/cpp.svg",
       
     }
   ];

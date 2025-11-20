@@ -16,7 +16,7 @@ const Header = () => {
           <div className="flex items-center">
             <a href="/" className="block">
               <img
-                src="/images/logo-1.svg"
+                src="./images/logo-1.svg"
                 alt="Kaif-Logo"
                 width={40}
                 height={40}

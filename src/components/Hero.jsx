@@ -11,7 +11,7 @@ const Hero = () => {
           {/* Decorative Logo */}
           <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 opacity-10">
             <img
-              src="/images/logo-1.svg"
+              src="./images/logo-1.svg"
               alt="Decorative Logo"
               width={120}
               height={120}

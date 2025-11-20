@@ -26,17 +26,17 @@ const ContactMe = () => {
     {
       name: "GitHub",
       url: "https://github.com/Kaif-Azmi",
-      icon: "/images/github.svg",
+      icon: "./images/github.svg",
     },
     {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/kaifazmi",
-      icon: "/images/linkedin.svg",
+      icon: "./images/linkedin.svg",
     },
     {
       name: "Twitter / X",
       url: "https://x.com/kaif_azmi0",
-      icon: "/images/x.svg",
+      icon: "./images/x.svg",
     },
   ];
 

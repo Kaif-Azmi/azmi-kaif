@@ -8,21 +8,21 @@ const PortfolioHighlights = () => {
     {
       id: 1,
       title: "An AI based trip planner",
-      image: "/images/project_1.svg",
+      image: "./images/project_1.svg",
       tags: ["API", "React", "Development"],
       link: "https://travelpal-ebon.vercel.app/",
     },
     {
       id: 2,
       title: "Personal Portfolio",
-      image: "/images/project_2.svg",
+      image: "./images/project_2.svg",
       tags: ["Portfolio", "Development","TailwindCSS"],
       link: "https://example.com",
     },
     {
       id: 3,
       title: "Car Website",
-      image: "/images/project-3.png",
+      image: "./images/project-3.png",
       tags: ["Frontend", "Responsive"],
       link: "https://car-brand-website.netlify.app/",
     }
