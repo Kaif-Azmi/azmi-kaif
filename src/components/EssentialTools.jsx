@@ -3,56 +3,25 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+import figmaIcon from '../assets/figma.svg';
+import cssIcon from '../assets/css3.svg';
+import jsIcon from '../assets/javascript.svg';
+import reactIcon from '../assets/react.svg';
+import tailwindIcon from '../assets/tailwindcss.svg';
+import nodeIcon from '../assets/nodejs.svg';
+import expressIcon from '../assets/expressjs.svg';
+import cppIcon from '../assets/cpp.svg';
+
 const EssentialTools = () => {
   const tools = [
-    {
-      name: "Figma",
-      category: "Design tool",
-      icon: "./images/figma.svg",
-      
-    },
-    {
-      name: "CSS",
-      category: "User Interface",
-      icon: "./images/css3.svg",
-      
-    },
-    {
-      name: "JavaScript",
-      category: "Interaction",
-      icon: "./images/javascript.svg",
-      
-    },
-    {
-      name: "React",
-      category: "Framework",
-      icon: "./images/react.svg",
-      
-    },
-    {
-      name: "TailwindCSS",
-      category: "User Interface",
-      icon: "./images/tailwindcss.svg",
-      
-    },
-    {
-      name: "Node.JS",
-      category: "Web Server",
-      icon: "./images/nodejs.svg",
-      
-    },
-    {
-      name: "Express.JS",
-      category: "Node Framework",
-      icon: "./images/expressjs.svg",
-      
-    },
-    {
-      name: "C++",
-      category: "Problem Solving",
-      icon: "./images/cpp.svg",
-      
-    }
+    { name: "Figma", category: "Design tool", icon: figmaIcon },
+    { name: "CSS", category: "User Interface", icon: cssIcon },
+    { name: "JavaScript", category: "Interaction", icon: jsIcon },
+    { name: "React", category: "Framework", icon: reactIcon },
+    { name: "TailwindCSS", category: "User Interface", icon: tailwindIcon },
+    { name: "Node.JS", category: "Web Server", icon: nodeIcon },
+    { name: "Express.JS", category: "Node Framework", icon: expressIcon },
+    { name: "C++", category: "Problem Solving", icon: cppIcon }
   ];
 
   return (
@@ -85,7 +54,6 @@ const EssentialTools = () => {
                   </p>
                 </div>
               </div>
-              
             </div>
           ))}
         </div>
@@ -95,4 +63,3 @@ const EssentialTools = () => {
 };
 
 export default EssentialTools;
-

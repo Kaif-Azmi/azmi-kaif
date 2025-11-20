@@ -3,26 +3,30 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+import project1 from '../assets/project_1.svg';
+import project2 from '../assets/project_2.svg';
+import project3 from '../assets/project-3.png';
+
 const PortfolioHighlights = () => {
   const projects = [
     {
       id: 1,
       title: "An AI based trip planner",
-      image: "./images/project_1.svg",
+      image: project1,
       tags: ["API", "React", "Development"],
       link: "https://travelpal-ebon.vercel.app/",
     },
     {
       id: 2,
       title: "Personal Portfolio",
-      image: "./images/project_2.svg",
-      tags: ["Portfolio", "Development","TailwindCSS"],
+      image: project2,
+      tags: ["Portfolio", "Development", "TailwindCSS"],
       link: "https://example.com",
     },
     {
       id: 3,
       title: "Car Website",
-      image: "./images/project-3.png",
+      image: project3,
       tags: ["Frontend", "Responsive"],
       link: "https://car-brand-website.netlify.app/",
     }
@@ -74,7 +78,7 @@ const PortfolioHighlights = () => {
                 <h3 className="text-zinc-50 font-semibold text-lg sm:text-xl mb-3">
                   {project.title}
                 </h3>
-                
+
                 {project.tags.length > 0 && (
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, index) => (
@@ -97,4 +101,3 @@ const PortfolioHighlights = () => {
 };
 
 export default PortfolioHighlights;
-

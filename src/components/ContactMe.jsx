@@ -6,6 +6,10 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
+import githubIcon from '../assets/github.svg';
+import linkedinIcon from '../assets/linkedin.svg';
+import xIcon from '../assets/x.svg';
+
 const ContactMe = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -23,21 +27,9 @@ const ContactMe = () => {
   const EMAILJS_PUBLIC_KEY = "NX3AHTMye0V8r4qQs";
 
   const socialLinks = [
-    {
-      name: "GitHub",
-      url: "https://github.com/Kaif-Azmi",
-      icon: "./images/github.svg",
-    },
-    {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/kaifazmi",
-      icon: "./images/linkedin.svg",
-    },
-    {
-      name: "Twitter / X",
-      url: "https://x.com/kaif_azmi0",
-      icon: "./images/x.svg",
-    },
+    { name: "GitHub", url: "https://github.com/Kaif-Azmi", icon: githubIcon },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/kaifazmi", icon: linkedinIcon },
+    { name: "Twitter / X", url: "https://x.com/kaif_azmi0", icon: xIcon },
   ];
 
   const handleChange = (e) => {
@@ -46,7 +38,7 @@ const ContactMe = () => {
       ...prev,
       [name]: value,
     }));
-    
+
     if (submitStatus.type) {
       setSubmitStatus({ type: null, message: "" });
     }
@@ -59,9 +51,7 @@ const ContactMe = () => {
 
     try {
       if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-        throw new Error(
-          "EmailJS is not configured. Please set up your EmailJS credentials."
-        );
+        throw new Error("EmailJS is not configured.");
       }
 
       const result = await emailjs.send(
@@ -79,42 +69,23 @@ const ContactMe = () => {
       if (result.status === 200 && result.text === "OK") {
         setSubmitStatus({
           type: "success",
-          message: "Message sent successfully! I'll get back to you soon.",
+          message: "Message sent successfully!",
         });
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-        });
+        setFormData({ name: "", email: "", message: "" });
       } else {
         throw new Error(`Unexpected response: ${JSON.stringify(result)}`);
       }
     } catch (error) {
-      console.error("EmailJS Error:", error);
-      
-      // Build user-friendly error message based on error type
       let errorMessage = "Failed to send message. ";
-      
       if (error.status) {
-        if (error.status === 400) {
-          errorMessage += "Bad Request (400). Please check your EmailJS template variables match: {{from_name}}, {{from_email}}, {{message}}. ";
-        } else if (error.status === 401) {
-          errorMessage += "Unauthorized (401). Invalid Public Key. ";
-        } else if (error.status === 404) {
-          errorMessage += "Not Found (404). Service or Template not found. ";
-        } else {
-          errorMessage += `Status: ${error.status}. `;
-        }
+        if (error.status === 400) errorMessage += "Bad Request (400). ";
+        else if (error.status === 401) errorMessage += "Unauthorized (401). ";
+        else if (error.status === 404) errorMessage += "Not Found (404). ";
+        else errorMessage += `Status: ${error.status}. `;
       }
-      
-      if (error.text) {
-        errorMessage += `Details: ${error.text}`;
-      } else if (error.message) {
-        errorMessage += error.message;
-      } else {
-        errorMessage += "Please check your EmailJS configuration or contact me directly at kaifazmi8573@gmail.com";
-      }
-      
+      if (error.text) errorMessage += `Details: ${error.text}`;
+      else if (error.message) errorMessage += error.message;
+
       setSubmitStatus({
         type: "error",
         message: errorMessage,
@@ -134,7 +105,7 @@ const ContactMe = () => {
                 Contact me for collaboration
               </h2>
               <p className="text-zinc-400 text-base sm:text-lg leading-relaxed">
-                Reach out today to discuss your project needs and start collaborating on something amazing!
+                Reach out today to discuss your project needs.
               </p>
             </div>
 
@@ -170,7 +141,7 @@ const ContactMe = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700/50 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700/50 rounded-lg text-zinc-50 placeholder-zinc-500 focus:ring-blue-500 transition-all"
                   placeholder="Your name"
                 />
               </div>
@@ -186,7 +157,7 @@ const ContactMe = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700/50 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700/50 rounded-lg text-zinc-50 placeholder-zinc-500 focus:ring-blue-500 transition-all"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -202,7 +173,7 @@ const ContactMe = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700/50 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+                  className="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700/50 rounded-lg text-zinc-50 placeholder-zinc-500 focus:ring-blue-500 transition-all resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -222,7 +193,7 @@ const ContactMe = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-6 py-3 bg-[#229cef] text-white font-semibold rounded-lg hover:bg-[#1a7bc7] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-6 py-3 bg-[#229cef] text-white font-semibold rounded-lg hover:bg-[#1a7bc7] transition-colors disabled:opacity-50"
               >
                 {isSubmitting ? "Sending..." : "Submit"}
               </button>
@@ -235,4 +206,3 @@ const ContactMe = () => {
 };
 
 export default ContactMe;
-

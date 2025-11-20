@@ -5,6 +5,7 @@
 
 import { useState } from "react";
 import Navbar from "./Navbar";
+import logo from "../assets/logo-1.svg";
 
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -16,7 +17,7 @@ const Header = () => {
           <div className="flex items-center">
             <a href="/" className="block">
               <img
-                src="./images/logo-1.svg"
+                src={logo}
                 alt="Kaif-Logo"
                 width={40}
                 height={40}
@@ -44,14 +45,13 @@ const Header = () => {
               <Navbar navOpen={navOpen} onLinkClick={() => setNavOpen(false)} />
             </div>
 
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               className="px-4 py-2 bg-[#229cef] text-white font-semibold rounded-lg hover:bg-[#1a7bc7] transition-colors hidden md:inline-flex whitespace-nowrap"
             >
               Contact Me
             </a>
           </div>
-
         </div>
       </div>
     </header>

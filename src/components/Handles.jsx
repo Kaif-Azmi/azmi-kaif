@@ -3,25 +3,33 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+import leetcodeIcon from '../assets/leetcode.svg';
+import codechefIcon from '../assets/codechef.svg';
+import githubIcon from '../assets/github.svg';
+import linkedinIcon from '../assets/linkedin.svg';
+import xIcon from '../assets/x.svg';
+import discordIcon from '../assets/discord.svg';
+import telegramIcon from '../assets/telegram.svg';
+
 const Handles = () => {
   const technicalHandles = [
     {
       name: "LeetCode",
       username: "Kaif_Azmi",
       url: "https://leetcode.com/u/Kaif_Azmi",
-      icon: "./images/leetcode.svg",
+      icon: leetcodeIcon,
     },
     {
       name: "CodeChef",
       username: "Kaifazmi0",
       url: "https://www.codechef.com/users/Kaifazmi0",
-      icon: "./images/codechef.svg",
+      icon: codechefIcon,
     },
     {
       name: "GitHub",
       username: "Kaif-Azmi",
       url: "https://github.com/Kaif-Azmi",
-      icon: "./images/github.svg",
+      icon: githubIcon,
     },
   ];
 
@@ -30,25 +38,25 @@ const Handles = () => {
       name: "LinkedIn",
       username: "kaifazmi",
       url: "https://www.linkedin.com/in/kaifazmi",
-      icon: "./images/linkedin.svg",
+      icon: linkedinIcon,
     },
     {
       name: "Twitter / X",
       username: "kaif_azmi0",
       url: "https://x.com/kaif_azmi0",
-      icon: "./images/x.svg",
+      icon: xIcon,
     },
     {
       name: "Discord",
       username: "kaifazmi0",
       url: "https://discord.com/users/1304459419249152082",
-      icon: "./images/discord.svg",
+      icon: discordIcon,
     },
     {
       name: "Telegram",
       username: "Kaif_azmi0",
       url: "https://t.me/Kaif_azmi0",
-      icon: "./images/telegram.svg",
+      icon: telegramIcon,
     },
   ];
 
@@ -59,7 +67,7 @@ const Handles = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-50 mb-8 sm:mb-10">
             Technical Handles
           </h2>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {technicalHandles.length > 0 ? (
               technicalHandles.map((handle, index) => (
@@ -113,7 +121,7 @@ const Handles = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-50 mb-8 sm:mb-10">
             Social Handles
           </h2>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {socialHandles.length > 0 ? (
               socialHandles.map((handle, index) => (
@@ -168,4 +176,3 @@ const Handles = () => {
 };
 
 export default Handles;
-

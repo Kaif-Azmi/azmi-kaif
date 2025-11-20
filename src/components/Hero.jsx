@@ -3,15 +3,16 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+import logo from '../assets/logo-1.svg';
+
 const Hero = () => {
   return (
     <section id="home" className="section-padding-hero">
       <div className="section-container">
         <div className="relative bg-zinc-800/50 rounded-3xl p-6 sm:p-8 lg:p-12 backdrop-blur-sm border border-zinc-700/50 overflow-hidden">
-          {/* Decorative Logo */}
           <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 opacity-10">
             <img
-              src="./images/logo-1.svg"
+              src={logo}
               alt="Decorative Logo"
               width={120}
               height={120}
@@ -19,14 +20,12 @@ const Hero = () => {
             />
           </div>
 
-          {/* Introduction Text */}
           <div className="relative z-10 max-w-2xl">
             <p className="text-zinc-50 text-base sm:text-lg lg:text-xl leading-relaxed">
               Welcome! I'm <span className="font-semibold text-zinc-50">Kaif</span>, a professional web developer with a knack for crafting visually stunning and highly functional websites. Combining creativity and technical expertise, I transform your vision into digital masterpieces that excel in both appearance and performance.
             </p>
           </div>
 
-          {/* Statistics */}
           <div className="relative z-10 mt-8 sm:mt-10 lg:mt-12 flex flex-wrap gap-6 sm:gap-8 lg:gap-12">
             <div className="flex flex-col">
               <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-50">
@@ -52,4 +51,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
