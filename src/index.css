@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: Inter, sans-serif;
+    
+    --padding-x-mobile: 1rem;
+    --padding-x-tablet: 1.5rem;
+    --padding-x-desktop: 2rem;
+    
+    --padding-y-mobile: 3rem;
+    --padding-y-tablet: 4rem;
+    --padding-y-desktop: 5rem;
+    
+    --padding-top-first: 6rem;
+    --padding-top-first-tablet: 7rem;
+    
+    --max-width-container: 64rem;
+    --max-width-header: 85.375rem;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-zinc-900 text-zinc-50;
+  }
+
+  header > div {
+    max-width: var(--max-width-header);
+    padding-left: var(--padding-x-mobile);
+    padding-right: var(--padding-x-mobile);
+    
+    @media (min-width: 640px) {
+      padding-left: var(--padding-x-tablet);
+      padding-right: var(--padding-x-tablet);
+    }
+    
+    @media (min-width: 1024px) {
+      padding-left: var(--padding-x-desktop);
+      padding-right: var(--padding-x-desktop);
+    }
+  }
+
+  .section-container {
+    width: 100%;
+    max-width: var(--max-width-container);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 639px) {
+    .section-container {
+      width: 80%;
+      max-width: 80%;
+    }
+  }
+
+  .section-padding {
+    padding-left: var(--padding-x-mobile);
+    padding-right: var(--padding-x-mobile);
+    
+    @media (min-width: 640px) {
+      padding-left: var(--padding-x-tablet);
+      padding-right: var(--padding-x-tablet);
+    }
+    
+    @media (min-width: 1024px) {
+      padding-left: var(--padding-x-desktop);
+      padding-right: var(--padding-x-desktop);
+    }
+  }
+
+  .section-padding-hero {
+    padding-top: var(--padding-top-first);
+    padding-bottom: var(--padding-y-mobile);
+    padding-left: var(--padding-x-mobile);
+    padding-right: var(--padding-x-mobile);
+    
+    @media (min-width: 640px) {
+      padding-top: var(--padding-top-first-tablet);
+      padding-bottom: var(--padding-y-tablet);
+      padding-left: var(--padding-x-tablet);
+      padding-right: var(--padding-x-tablet);
+    }
+    
+    @media (min-width: 1024px) {
+      padding-bottom: var(--padding-y-desktop);
+      padding-left: var(--padding-x-desktop);
+      padding-right: var(--padding-x-desktop);
+    }
+  }
+
+  .section-padding-regular {
+    padding-top: var(--padding-y-mobile);
+    padding-bottom: var(--padding-y-mobile);
+    padding-left: var(--padding-x-mobile);
+    padding-right: var(--padding-x-mobile);
+    
+    @media (min-width: 640px) {
+      padding-top: var(--padding-y-tablet);
+      padding-bottom: var(--padding-y-tablet);
+      padding-left: var(--padding-x-tablet);
+      padding-right: var(--padding-x-tablet);
+    }
+    
+    @media (min-width: 1024px) {
+      padding-top: var(--padding-y-desktop);
+      padding-bottom: var(--padding-y-desktop);
+      padding-left: var(--padding-x-desktop);
+      padding-right: var(--padding-x-desktop);
+    }
+  }
+}
+
+@layer components {
+  .menu-btn {
+    @apply w-10 h-10 grid place-items-center bg-zinc-50/10 rounded-xl 
+           ring-inset ring-1 ring-zinc-50/2 backdrop-blur-2xl 
+           hover:bg-zinc-50/15 transition-[transform,background-color] active:scale-95;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium text-sm transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-zinc-50/10 hover:bg-zinc-50/15 text-zinc-50 
+           ring-inset ring-1 ring-zinc-50/5 backdrop-blur-sm;
+  }
+}
+
+@layer components {
+  .navbar {
+    @apply absolute top-full mt-2 right-0 min-w-[140px] w-fit 
+           max-w-[calc(100vw-2rem)] p-2.5 bg-zinc-50/10 rounded-2xl 
+           ring-inset ring-1 ring-zinc-50/5 isolate blur-sm opacity-0 invisible 
+           transition-[opacity,transform,filter] overflow-hidden
+           
+           md:static md:flex md:items-center md:justify-center md:mt-0 
+           md:opacity-100 md:blur-none md:visible md:scale-100 md:min-w-0 
+           md:w-auto md:max-w-none md:left-auto md:right-auto md:translate-x-0 
+           md:mx-auto backdrop-blur-2xl;
+
+    transform: scale(0.9);
+  }
+
+  @media (min-width: 768px) {
+    .navbar {
+      transform: none !important;
+    }
+  }
+
+  .navbar.active {
+    @apply opacity-100 blur-none visible z-50;
+    
+    transform: scale(1);
+  }
+
+  .nav-link {
+    @apply grid items-center h-9 px-4 text-sm font-medium tracking-wide 
+           text-zinc-50/50 hover:text-zinc-50 transition-colors 
+           relative z-10 whitespace-nowrap;
+  }
+
+  .nav-link.active {
+    @apply text-zinc-900 duration-500;
+  }
+
+  .navbar .active-box {
+    @apply absolute h-9 bg-zinc-50 rounded-lg 
+           z-0 transition-[top,left,width] duration-500;
+  }
+}
