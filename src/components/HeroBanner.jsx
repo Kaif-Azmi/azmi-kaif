@@ -4,7 +4,7 @@
 // https://opensource.org/licenses/
 
 // images import
-import avatar from '../assets/avatar_1.jpg';
+import avatar from '../assets/avatar.avif';
 
 const HeroBanner = () => {
   return (
@@ -13,8 +13,6 @@ const HeroBanner = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="space-y-6 sm:space-y-8">
             <div className="flex items-center gap-3">
-
-              {/* FIXED: correct image usage */}
               <img
                 src={avatar}
                 alt="Kaif"
@@ -33,8 +31,6 @@ const HeroBanner = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-
-              {/* FIXED: correct resume path */}
               <a
                 href="/Kaif_Azmi_Resume.pdf"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#229cef] text-white font-semibold rounded-lg hover:bg-[#1a7bc7] transition-colors"
@@ -58,21 +54,15 @@ const HeroBanner = () => {
 
           <div className="relative lg:order-last flex justify-center lg:justify-end">
             <div className="relative rounded-2xl overflow-hidden w-[68%]">
-
-              {/* FIXED: use imported avatar instead of broken path */}
               <img
                 src={avatar}
                 alt="Kaif - Web Developer"
                 className="w-full h-auto object-cover rounded-2xl"
               />
-
-              {/* Color overlay */}
               <div
                 className="absolute inset-0 rounded-2xl mix-blend-multiply opacity-30"
                 style={{ backgroundColor: '#3ca7cf' }}
               ></div>
-
-              {/* Blue glow effect */}
               <div className="absolute -right-8 -top-8 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl -z-10"></div>
             </div>
           </div>

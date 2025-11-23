@@ -3,25 +3,49 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-import figmaIcon from '../assets/figma.svg';
-import cssIcon from '../assets/css3.svg';
-import jsIcon from '../assets/javascript.svg';
-import reactIcon from '../assets/react.svg';
-import tailwindIcon from '../assets/tailwindcss.svg';
-import nodeIcon from '../assets/nodejs.svg';
-import expressIcon from '../assets/expressjs.svg';
-import cppIcon from '../assets/cpp.svg';
-
+import "devicon/devicon.min.css";
 const EssentialTools = () => {
   const tools = [
-    { name: "Figma", category: "Design tool", icon: figmaIcon },
-    { name: "CSS", category: "User Interface", icon: cssIcon },
-    { name: "JavaScript", category: "Interaction", icon: jsIcon },
-    { name: "React", category: "Framework", icon: reactIcon },
-    { name: "TailwindCSS", category: "User Interface", icon: tailwindIcon },
-    { name: "Node.JS", category: "Web Server", icon: nodeIcon },
-    { name: "Express.JS", category: "Node Framework", icon: expressIcon },
-    { name: "C++", category: "Problem Solving", icon: cppIcon }
+    {
+      name: "Figma",
+      category: "Design tool",
+      icon: "devicon-figma-plain colored",
+    },
+    {
+      name: "CSS",
+      category: "User Interface",
+      icon: "devicon-css3-plain colored",
+    },
+    {
+      name: "JavaScript",
+      category: "Interaction",
+      icon: "devicon-javascript-plain colored",
+    },
+    {
+      name: "React",
+      category: "Framework",
+      icon: "devicon-react-original colored",
+    },
+    {
+      name: "TailwindCSS",
+      category: "User Interface",
+      icon: "devicon-tailwindcss-plain colored",
+    },
+    {
+      name: "Node.JS",
+      category: "Web Server",
+      icon: "devicon-nodejs-plain colored",
+    },
+    {
+      name: "Express.JS",
+      category: "Node Framework",
+      icon: "devicon-express-original",
+    },
+    {
+      name: "C++",
+      category: "Problem Solving",
+      icon: "devicon-cplusplus-plain colored",
+    },
   ];
 
   return (
@@ -40,11 +64,11 @@ const EssentialTools = () => {
               className="bg-zinc-800/50 rounded-2xl p-5 sm:p-6 border border-zinc-700/50 backdrop-blur-sm hover:bg-zinc-800/70 transition-colors"
             >
               <div className="flex items-center gap-3 mb-3">
-                <img
-                  src={tool.icon}
-                  alt={tool.name}
-                  className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
-                />
+                <i
+                  className={`${tool.icon} text-4xl sm:text-5xl`}
+                  aria-hidden="true"
+                ></i>
+
                 <div>
                   <h3 className="text-zinc-50 font-semibold text-base sm:text-lg">
                     {tool.name}

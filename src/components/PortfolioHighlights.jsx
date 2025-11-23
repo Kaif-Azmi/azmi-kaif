@@ -53,6 +53,7 @@ const PortfolioHighlights = () => {
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
+                  loading='lazy'
                   alt={project.title}
                   className="w-full h-48 sm:h-56 object-cover transition-transform duration-300 group-hover:scale-105"
                 />

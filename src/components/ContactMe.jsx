@@ -6,9 +6,9 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
-import githubIcon from '../assets/github.svg';
-import linkedinIcon from '../assets/linkedin.svg';
-import xIcon from '../assets/x.svg';
+import githubIcon from "../assets/github.svg";
+import linkedinIcon from "../assets/linkedin.svg";
+import xIcon from "../assets/x.svg";
 
 const ContactMe = () => {
   const [formData, setFormData] = useState({
@@ -28,21 +28,26 @@ const ContactMe = () => {
 
   const socialLinks = [
     { name: "GitHub", url: "https://github.com/Kaif-Azmi", icon: githubIcon },
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/kaifazmi", icon: linkedinIcon },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/kaifazmi",
+      icon: linkedinIcon,
+    },
     { name: "Twitter / X", url: "https://x.com/kaif_azmi0", icon: xIcon },
   ];
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+  const { name, value } = e.target;
 
-    if (submitStatus.type) {
-      setSubmitStatus({ type: null, message: "" });
-    }
-  };
+  setFormData((prev) => ({
+    ...prev,
+    [name]: value,
+  }));
+  if (submitStatus.type !== null) {
+    setSubmitStatus({ type: null, message: "" });
+  }
+};
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,45 +55,36 @@ const ContactMe = () => {
     setSubmitStatus({ type: null, message: "" });
 
     try {
-      if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-        throw new Error("EmailJS is not configured.");
-      }
-
       const result = await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
+        "service_moir4qf",
+        "template_uce3ujm",
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
           to_email: "kaifazmi8573@gmail.com",
         },
-        EMAILJS_PUBLIC_KEY
+        "NX3AHTMye0V8r4qQs"
       );
 
-      if (result.status === 200 && result.text === "OK") {
+      if (result.status === 200) {
         setSubmitStatus({
           type: "success",
           message: "Message sent successfully!",
         });
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        throw new Error(`Unexpected response: ${JSON.stringify(result)}`);
-      }
-    } catch (error) {
-      let errorMessage = "Failed to send message. ";
-      if (error.status) {
-        if (error.status === 400) errorMessage += "Bad Request (400). ";
-        else if (error.status === 401) errorMessage += "Unauthorized (401). ";
-        else if (error.status === 404) errorMessage += "Not Found (404). ";
-        else errorMessage += `Status: ${error.status}. `;
-      }
-      if (error.text) errorMessage += `Details: ${error.text}`;
-      else if (error.message) errorMessage += error.message;
 
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        throw new Error("Unexpected EmailJS response.");
+      }
+    } catch (err) {
       setSubmitStatus({
         type: "error",
-        message: errorMessage,
+        message: "Failed to send message. Please try again.",
       });
     } finally {
       setIsSubmitting(false);
@@ -131,7 +127,10 @@ const ContactMe = () => {
           <div>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="name" className="block text-zinc-50 text-sm font-medium mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-zinc-50 text-sm font-medium mb-2"
+                >
                   Name
                 </label>
                 <input
@@ -147,7 +146,10 @@ const ContactMe = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-zinc-50 text-sm font-medium mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-zinc-50 text-sm font-medium mb-2"
+                >
                   Email
                 </label>
                 <input
@@ -163,7 +165,10 @@ const ContactMe = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-zinc-50 text-sm font-medium mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-zinc-50 text-sm font-medium mb-2"
+                >
                   Message
                 </label>
                 <textarea
