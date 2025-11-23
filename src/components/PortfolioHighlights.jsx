@@ -21,7 +21,7 @@ const PortfolioHighlights = () => {
       title: "Personal Portfolio",
       image: project2,
       tags: ["Portfolio", "Development", "TailwindCSS"],
-      link: "https://example.com",
+      link: "https://kaif-azmi.github.io/azmi-kaif/",
     },
     {
       id: 3,
